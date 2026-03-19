@@ -1,0 +1,7 @@
+pwd
+ifconfig
+kubectl get all -o wide
+kubectl apply -f /root/pro-shreyash/nginx-deploy.yml
+kubectl apply -f /root/pro-shreyash/nginx-svc.yml
+kubectl get all -o wide
+
