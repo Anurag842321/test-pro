@@ -1,0 +1,9 @@
+#!/bin/bash
+pwd
+docker images
+docker ps -a
+docker image build -t nginx:${BUILD_ID} --no-cache /root/revise-projects/test-pro/task-3/
+docker images
+docker run --name n1 -dit -P nginx:${BUILD_ID}
+docker ps -a
+ifconfig
