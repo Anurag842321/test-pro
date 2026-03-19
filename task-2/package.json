@@ -1,0 +1,16 @@
+{
+  "name": "tgapp",
+  "version": "1.0.0",
+  "description": "Simple Node.js Express application for Docker",
+  "main": "app1.js",
+  "scripts": {
+    "start": "node app1.js"
+  },
+  "author": "Kishan Mishra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
+
+
