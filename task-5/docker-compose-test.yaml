@@ -1,0 +1,19 @@
+services:
+  myapp1:
+    image: nginx:latest
+    deploy:
+      resources:
+        limits:
+          cpus: ".50"
+          memory: 128M
+        reservations:
+          cpus: ".25"
+          memory: 64M 
+    expose:
+      - "80"
+
+  myapp2:
+    image: 933538/repo2026:nginx-v1.0
+    expose:
+      - "80"  
+      

@@ -1,0 +1,41 @@
+services:
+  mydb:
+    image: mysql:8.0
+    container_name: mydb
+    restart: unless-stopped
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      mytg:  
+    environment:
+      - MYSQL_ROOT_PASSWORD=redhat
+      - MYSQL_DATABASE=tgindia
+      - MYSQL_USER=anurag
+      - MYSQL_PASSWORD=ubuntu
+        
+
+  mywp:
+    image: wordpress:latest
+    container_name: mywp
+    restart: unless-stopped
+    ports:
+      - "8080:80"  
+    depends_on:
+      - mydb  
+    volumes:
+      - wpdata:/var/www/html/
+    networks:
+      mytg:
+    environment:
+      - WORDPRESS_DB_HOST=mydb:3306
+      - WORDPRESS_DB_USER=anurag
+      - WORDPRESS_DB_PASSWORD=ubuntu
+      - WORDPRESS_DB_NAME=tgindia
+
+volumes:
+  dbdata:
+  wpdata:  
+networks:
+   mytg: {} 
+
+
